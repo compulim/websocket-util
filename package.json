@@ -1,6 +1,6 @@
 {
   "name": "websocket-util",
-  "version": "1.0.0",
+  "version": "1.0.0-0",
   "description": "Helper utilities for Web Socket packages",
   "main": "lib/index.js",
   "scripts": {
