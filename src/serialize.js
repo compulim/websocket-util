@@ -11,10 +11,14 @@ function blobToArrayBuffer(blob) {
   });
 }
 
+function isArrayBuffer(arrayBuffer) {
+  return arrayBuffer instanceof ArrayBuffer || [].toString.call(arrayBuffer) === '[object ArrayBuffer]';
+}
+
 export default function serialize(data) {
   if (typeof data === 'string') {
     return { string: data };
-  } else if (typeof ArrayBuffer !== 'undefined' && data instanceof ArrayBuffer) {
+  } else if (typeof ArrayBuffer !== 'undefined' && isArrayBuffer(data)) {
     return { base64: fromByteArray(new Uint8Array(data)) };
   } else if (typeof Buffer !== 'undefined' && data instanceof Buffer) {
     return { base64: data.toString('base64') };

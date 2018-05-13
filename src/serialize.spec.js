@@ -10,7 +10,7 @@ test('serialize string', () => {
 });
 
 test('serialize ArrayBuffer', () => {
-  const base64 = new Buffer('Hello, World!').toString('base64');
+  const base64 = Buffer.from('Hello, World!').toString('base64');
   const byteArray = toByteArray(base64);
   const json = serialize(byteArray.buffer);
 
@@ -18,7 +18,7 @@ test('serialize ArrayBuffer', () => {
 });
 
 test('serialize node buffer', () => {
-  const buffer = new Buffer('Hello, World!');
+  const buffer = Buffer.from('Hello, World!');
   const json = serialize(buffer);
 
   expect(json).toEqual({ base64: buffer.toString('base64') });
@@ -31,7 +31,7 @@ test('deserialize string', () => {
 });
 
 test('deserialize base64', () => {
-  const actual = deserialize({ base64: new Buffer('Hello, World!').toString('base64') });
+  const actual = deserialize({ base64: Buffer.from('Hello, World!').toString('base64') });
 
   expect(actual).toBeInstanceOf(Buffer);
   expect(actual.toString()).toBe('Hello, World!');
