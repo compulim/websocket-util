@@ -4,6 +4,7 @@
 
 Helper utilities for the following Web Socket packages:
 
+* [`childprocess-messageport`](https://npmjs.com/package/childprocess-messageport)
 * [`childprocess-websocket`](https://npmjs.com/package/childprocess-websocket)
 * [`electron-ipcmain-messageport`](https://npmjs.com/package/electron-ipcmain-messageport)
 * [`electron-ipcrenderer-messageport`](https://npmjs.com/package/electron-ipcrenderer-messageport)
