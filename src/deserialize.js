@@ -7,7 +7,9 @@ export default function deserialize(data) {
     } else {
       return Buffer.from(data.base64, 'base64');
     }
-  } else {
+  } else if ('string' in data) {
     return data.string;
+  } else {
+    throw new Error('failed to deserialize');
   }
 }
